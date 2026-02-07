@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Nunito:wght@300;400;600;700;800&family=Pacifico&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #FFD1DC 0%, #E6E6FA 100%);
+    min-height: 100vh;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.dancing-script {
+    font-family: 'Dancing Script', cursive;
+}
+
+.pacifico {
+    font-family: 'Pacifico', cursive;
+}
+
+@layer base {
+    :root {
+        --background: 340 100% 98%;
+        --foreground: 0 0% 29%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 29%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 29%;
+        --primary: 351 100% 86%;
+        --primary-foreground: 340 40% 35%;
+        --secondary: 240 100% 94%;
+        --secondary-foreground: 240 40% 35%;
+        --accent: 28 100% 88%;
+        --accent-foreground: 28 40% 35%;
+        --muted: 0 0% 96%;
+        --muted-foreground: 0 0% 45%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 90%;
+        --input: 0 0% 90%;
+        --ring: 351 100% 86%;
+        --radius: 1.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float-slow {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    50% {
+        transform: translateY(-30px) translateX(10px);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-slow {
+    animation: float-slow 4s ease-in-out infinite;
+}
+
+.sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes petal-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.petal {
+    animation: petal-fall linear infinite;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #FF9A9E 0%, #FECFEF 99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
